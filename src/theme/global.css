@@ -1,0 +1,50 @@
+
+.dashboard-title {
+  font-weight: bold;
+}
+
+.h7 {
+  font-size: 0.75rem;
+}
+
+.h6-7 {
+  font-size: 14px;
+}
+
+.secondary {
+  color: rgb(149, 161, 170) !important;
+}
+
+.vcenter {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.hcenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.b4 {
+  font-weight: 400;
+}
+.b5 {
+  font-weight: 500;
+}
+
+.b6 {
+  font-weight: 600;
+}
+
+.item-card {
+  background-color: #222230 !important;
+  width: 100% !important;
+  height: auto !important;
+  border-color: #414242 !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.item-card:hover {
+  transform: scale(1.03);
+  border-color: #ffc107 !important;
+}
