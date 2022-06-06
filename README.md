@@ -5,9 +5,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Features
 
 - Web3Modal
+- Hardhat
 - Bootstrap
 - FontAwesome
 
+## TODO
+
+- test case
+- deploy.js
 
 ## Getting Started
 
@@ -22,17 +27,14 @@ $ yarn
 ```
 
 ```bash
-$ yarn contract:compile
-$ yarn contract:abi2json
+$ yarn compile
 ```
-
 
 ```bash
 $ yarn start
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
 
 ## Available Scripts
 
@@ -42,7 +44,8 @@ In the project directory, you can run:
 
 Install
 
-### `npm contract:compile` / `yarn contract:compile`
+### `npm run compile` / `yarn compile`
+
 Compile contracts to generate necessary ABIs.
 
 ### `npm start` / `yarn start`
@@ -107,4 +110,3 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
-

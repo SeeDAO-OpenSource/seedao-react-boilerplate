@@ -6,7 +6,7 @@ import ConnectCard from "../components/ConnectCard";
 
 import { ethers } from "ethers";
 
-import MockNFTABI from "../config/abi/contracts_mock1155_sol_MyToken.abi.json" ;
+import MockNFT from "../artifacts/contracts/mock1155.sol/MyToken.json";
 const CONTRACT_ADDR = "0xbDb1668241E24238c8566F11d8bAa2D2b199f79E";
 
 // const commify = ethers.utils.commify;
@@ -38,7 +38,7 @@ export default function Dashboard(props) {
     const address = CONTRACT_ADDR;
     const contractWithSigner = new ethers.Contract(
       ethers.utils.getAddress(address.toLowerCase()),
-      MockNFTABI,
+      MockNFT.abi,
       provider
     );
 
@@ -77,12 +77,11 @@ export default function Dashboard(props) {
     return promise;
   };
 
-
   const doMint = () => {
     const address = CONTRACT_ADDR;
     const contractWithSigner = new ethers.Contract(
       ethers.utils.getAddress(address.toLowerCase()),
-      MockNFTABI,
+      MockNFT.abi,
       provider.getSigner()
     );
 
@@ -96,10 +95,8 @@ export default function Dashboard(props) {
         return null;
       });
   };
-  
 
   useEffect(() => {
-
     signerAddress &&
       loadData().then((res) => {
         res[0].balances.filter((b) => b != 0).length != 0 &&
@@ -138,18 +135,15 @@ export default function Dashboard(props) {
           )}
         </Col>
       </Row>
-      {signerAddress ? (<Row className="mt-5 ms-3">
-        <Col >
-          <Button
-              variant="outline-light"
-              size="md"
-              onClick={doMint}
-            >
-            Mint 1 more
-          </Button>
-        </Col>
-      </Row>) : null
-      }
+      {signerAddress ? (
+        <Row className="mt-5 ms-3">
+          <Col>
+            <Button variant="outline-light" size="md" onClick={doMint}>
+              Mint 1 more
+            </Button>
+          </Col>
+        </Row>
+      ) : null}
 
       <Row className="mt-5"></Row>
       <Row className="mt-5"></Row>
